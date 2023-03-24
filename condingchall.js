@@ -181,8 +181,8 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 
 // DATA: Dolphins score 96, 108 and 89
 // Koalas score 88, 91 and 110
-let dolphinsAverage = (96 + 108 + 90) / 3;
-let koalasAverage = (88 + 91 + 110) / 3;
+let dolphinsAverage = (97 + 112 + 80) / 3;
+let koalasAverage = (109 + 95 + 50) / 3;
 
 console.log(dolphinsAverage);
 console.log(koalasAverage);
@@ -191,47 +191,12 @@ if (dolphinsAverage > koalasAverage && dolphinsAverage >= 100) {
   console.log("Dolphins wins!");
 } else if (koalasAverage > dolphinsAverage && koalasAverage >= 100) {
   console.log("Koalas wins!");
-} else if (dolphinsAverage === koalasAverage && dolphinsAverage >= 100 && koalasAverage >= 100) {
+} else if (
+  dolphinsAverage === koalasAverage &&
+  dolphinsAverage >= 100 &&
+  koalasAverage >= 100
+) {
   console.log("Draw!");
 } else {
   console.log("No team wins the trophy");
 }
-
-
-// DATA 2:
-let dolphinsAverage2 = (97 + 112 + 101) / 3;
-let koalasAverage2 = (109 + 95 + 123) / 3;
-
-console.log(dolphinsAverage2);
-console.log(koalasAverage2);
-
-if (dolphinsAverage2 > koalasAverage2 && dolphinsAverage2 >= 100) {
-  console.log("Dolphins wins!");
-} else if (koalasAverage2 > dolphinsAverage2 && koalasAverage2 >= 100) {
-  console.log("Koalas wins!");
-} else if (dolphinsAverage2 === koalasAverage2 && dolphinsAverage2 >= 100 && dolphinsAverage2 >= 100) {
-  console.log("Draw!");
-} else {
-  console.log("No team wins the trophy");
-}
-
-
-// DATA 3:
-let dolphinsAverage3 = (97 + 112 + 101) / 3;
-let koalasAverage3 = (109 + 95 + 106) / 3;
-
-console.log(dolphinsAverage3);
-console.log(koalasAverage3);
-
-if (dolphinsAverage3 > koalasAverage3 && dolphinsAverage3 >= 100) {
-  console.log("Dolphins wins!");
-} else if (koalasAverage3 > dolphinsAverage3 && koalasAverage3 >= 100) {
-  console.log("Koalas wins!");
-} else if (dolphinsAverage3 === koalasAverage3 && dolphinsAverage3 >= 100 && koalasAverage3 >= 100) {
-  console.log("Draw!");
-} else {
-  console.log("No team wins the trophy");
-}
-
-
-
