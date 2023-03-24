@@ -170,7 +170,7 @@ const isTired = true;
 
 if (hasDriversLicense && hasGoodVision && !isTired) {
   console.log('You can drive')
-}*/
+}
 
 // Two gymnastics teams that compete against each other 3 times,
 // the winner with the highest average score wins the trophy
@@ -200,3 +200,82 @@ if (dolphinsAverage > koalasAverage && dolphinsAverage >= 100) {
 } else {
   console.log("No team wins the trophy");
 }
+
+
+const day = prompt('What day is today')
+
+switch (day) {
+  case "monday":
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
+    break;
+  case "tuesday":
+    console.log("Prepare theory videos");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Write code examples");
+    break;
+  case "friday":
+    console.log("Record videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend");
+    break;
+  default:
+    console.log(`${day} is not a valid day`)
+    break;
+}
+
+const day2 = prompt('Whay day is today')
+
+if (day2 === 'monday'){
+  console.log("Plan course structure");
+  console.log("Go to coding meetup");  
+} else if (day2 === 'tuesday'){
+  console.log("Prepare theory videos");
+} else if (day2 === 'wednesday' || day2 === 'thursday'){
+  console.log("Write code examples");
+} else if (day2 === 'friday'){
+  console.log("Record videos");
+} else if (day2 === 'saturday' || day2 === 'sunday'){
+  console.log('Enjoy the weekend')
+} else{
+  console.log(`${day2} is not a valid day`)
+}
+
+let teste = true && false && !false
+
+console.log(teste)
+
+if (23 > 10) {
+  const str = "23 is bigger";
+}
+
+const age = 21;
+
+age >= 18
+  ? console.log("I can drink wine 🍷")
+  : console.log("I can drink water 💧");
+
+const nome = 'jacques'
+const age2 = 11;
+
+const iCanDrink = age2 >= 18 ? 'wine 🍷' : 'water 💧'
+
+console.log(`I can drink ${iCanDrink}`)
+
+console.log(`I can drink ${age2 >= 18 ? 'wine 🍷' : 'water 💧'}`)
+
+console.log(`His name is ${nome === 'jacques' ? 'jacques' : 'Jacão'}`)*/
+
+const bill = 40;
+const tip = bill > 50 && bill < 301 ? bill * 0.15 : bill * 0.20
+const billPlusTip = bill + tip
+
+
+
+
+console.log(`The bill was ${bill}, the tip was ${tip} 
+and the total value is ${billPlusTip}`)
