@@ -320,24 +320,32 @@ let pokemon = prompt("Pokemon name:");
 
 pokemon = pokemon.toLowerCase();
 
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+
+const myPokemon = new Pokemon();
+
+
+
 fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
   .then((response) => response.json())
   .then((data) => {
-    const myPokemon = new Pokemon();
     myPokemon.sprite = data.sprites.other.dream_world.front_default;
     myPokemon.type = data.types;
     const pokemonImage = document.getElementById("pokemon-image");
     pokemonImage.src = myPokemon.sprite;
     for (let i = 0; i < myPokemon.type.length; i++) {
       const typeElement = document.createElement("h1");
-      typeElement.textContent = myPokemon.type[i].type.name;
+      typeElement.textContent = capitalize(myPokemon.type[i].type.name);
       poketypes.appendChild(typeElement);
     }
     const pokeName = document.getElementById("pokename");
-
-    function capitalize(str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    }
     pokeName.textContent = capitalize(pokemon);
   })
-  .catch((error) => console.error(error));
+  .catch((error) => {
+    console.error(error);
+    const errorMsg = document.getElementById('error');
+    errorMsg.textContent = 'Could not find that Pokémon'
+  });
