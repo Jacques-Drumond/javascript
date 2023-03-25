@@ -316,23 +316,26 @@ class Pokemon {
   }
 }
 
-
-
 let pokemon = prompt("Pokemon name:");
 
 pokemon = pokemon.toLowerCase();
 
-
-
 fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
   .then((response) => response.json())
   .then((data) => {
-    const myPokemon = new Pokemon()
+    const myPokemon = new Pokemon();
     myPokemon.sprite = data.sprites.other.dream_world.front_default;
     myPokemon.type = data.types;
     console.log(myPokemon.sprite);
     for (let i = 0; i < myPokemon.type.length; i++) {
       console.log(myPokemon.type[i].type.name);
+    }
+    const pokemonImage = document.getElementById("pokemon-image");
+    pokemonImage.src = myPokemon.sprite;
+    for (let i = 0; i < myPokemon.type.length; i++) {
+      const typeElement = document.createElement("p");
+      typeElement.textContent = myPokemon.type[i].type.name;
+      poketypes.appendChild(typeElement);
     }
   })
   .catch((error) => console.error(error));
