@@ -326,16 +326,18 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     const myPokemon = new Pokemon();
     myPokemon.sprite = data.sprites.other.dream_world.front_default;
     myPokemon.type = data.types;
-    console.log(myPokemon.sprite);
-    for (let i = 0; i < myPokemon.type.length; i++) {
-      console.log(myPokemon.type[i].type.name);
-    }
     const pokemonImage = document.getElementById("pokemon-image");
     pokemonImage.src = myPokemon.sprite;
     for (let i = 0; i < myPokemon.type.length; i++) {
-      const typeElement = document.createElement("p");
+      const typeElement = document.createElement("h1");
       typeElement.textContent = myPokemon.type[i].type.name;
       poketypes.appendChild(typeElement);
     }
+    const pokeName = document.getElementById("pokename");
+
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+    pokeName.textContent = capitalize(pokemon);
   })
   .catch((error) => console.error(error));
