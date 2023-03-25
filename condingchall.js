@@ -268,14 +268,71 @@ console.log(`I can drink ${iCanDrink}`)
 
 console.log(`I can drink ${age2 >= 18 ? 'wine 🍷' : 'water 💧'}`)
 
-console.log(`His name is ${nome === 'jacques' ? 'jacques' : 'Jacão'}`)*/
+console.log(`His name is ${nome === 'jacques' ? 'jacques' : 'Jacão'}`)
 
 const bill = 40;
-const tip = bill > 50 && bill < 301 ? bill * 0.15 : bill * 0.20
-const billPlusTip = bill + tip
+const tip = bill > 50 && bill < 301 ? bill * 0.15 : bill * 0.2;
+const billPlusTip = bill + tip;
+
+console.log(
+  `The bill was ${bill}, the tip was ${tip} and the total value is ${billPlusTip}`
+);
+
+let hasDriversLicense = false;
+
+const passTest = false;
+
+switch (passTest) {
+  case true:
+    hasDriversLicense = true;
+    console.log("You now have a drivers license");
+    break;
+  default:
+    console.log("You cant drive yet");
+}
+
+if (passTest) {
+  hasDriversLicense = true;
+}
+
+
+let hasDriversLicense = false;
+
+let passTest = true;
+
+if (passTest) {
+  hasDriversLicense = true;
+}
+
+
+if (hasDriversLicense){
+  console.log('I can drive')
+}*/
+
+class Pokemon {
+  constructor() {
+    this.sprite = null;
+    this.type = null;
+  }
+}
 
 
 
+let pokemon = prompt("Pokemon name:");
 
-console.log(`The bill was ${bill}, the tip was ${tip} 
-and the total value is ${billPlusTip}`)
+pokemon = pokemon.toLowerCase();
+
+
+
+fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+  .then((response) => response.json())
+  .then((data) => {
+    const myPokemon = new Pokemon()
+    myPokemon.sprite = data.sprites.other.dream_world.front_default;
+    myPokemon.type = data.types;
+    console.log(myPokemon.sprite);
+    for (let i = 0; i < myPokemon.type.length; i++) {
+      console.log(myPokemon.type[i].type.name);
+    }
+  })
+  .catch((error) => console.error(error));
