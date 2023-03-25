@@ -343,10 +343,6 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function getDetails(url) {
-  return fetch(url).then((response) => response.json());
-}
-
 const myPokemon = new Pokemon();
 
 fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
